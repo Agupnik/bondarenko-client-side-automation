@@ -1,0 +1,6 @@
+{
+  "SeleniumGrid": {
+    "HostUri": "https://webmail.meta.ua"
+  },
+  "RunType": "Local"
+}
