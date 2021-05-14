@@ -1,0 +1,62 @@
+<<<<<<< HEAD
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+=======
+﻿# Prerequisites
+*.d
+
+/.vs/*
+/*/*/bin/**
+/*/*/obj/*
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
+*.DotSettings
+*.feature.cs
+/*.AssemblyInfo.cs
+/*.AssemblyAttributes.cs
+/*.cache
+*/obj
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+/*.user
+/TestResults/*.html
+/*/*/obj/*
+
+*.user
+>>>>>>> master

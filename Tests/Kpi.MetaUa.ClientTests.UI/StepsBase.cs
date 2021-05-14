@@ -19,7 +19,7 @@ namespace Kpi.MetaUa.ClientTests.UI
         public void OpenMainView() =>
             _webDriver.Get(_environmentConfiguration.EnvironmentUri);
 
-        public void SwitchToNewTab() =>
+        protected void SwitchToNewTab() =>
             _webDriver.SwitchToNewTab();
     }
 }

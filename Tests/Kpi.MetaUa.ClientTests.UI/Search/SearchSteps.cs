@@ -22,9 +22,11 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
 
         private SearchPage SearchPage => PageFactory.Get<SearchPage>(_webDriver);
 
-        public void SetValue(string value)
+        public void SetValue(
+            string value)
         {
-            SearchElement.SetValue(value);
+            SearchElement.SetValue(
+                value);
         }
 
         public void Search()

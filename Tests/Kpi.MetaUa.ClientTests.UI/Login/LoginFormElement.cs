@@ -19,14 +19,18 @@ namespace Kpi.MetaUa.ClientTests.UI.Login
         [FindBy(How.XPath, ".//font")] 
         public HtmlLabel ErrorMessage { get; set; }
 
-        public void SetLogin(string login)
+        public void SetLogin(
+            string login)
         {
-            LoginTextBox.SetText(login);
+            LoginTextBox.SetText(
+                login);
         }
 
-        public void SetPassword(string password)
+        public void SetPassword(
+            string password)
         {
-            PasswordTextBox.SetText(password);
+            PasswordTextBox.SetText(
+                password);
         }
 
         public void Login()

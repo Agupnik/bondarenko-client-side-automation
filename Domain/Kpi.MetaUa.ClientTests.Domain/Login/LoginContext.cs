@@ -17,13 +17,15 @@ namespace Kpi.MetaUa.ClientTests.Domain.Login
             return _loginSteps.GetErrorMessage();
         }
 
-        public void OpenAndLogin(UserInformation user)
+        public void OpenAndLogin(
+            UserInformation user)
         {
             _loginSteps.OpenMainView();
             Login(user);
         }
 
-        private void Login(UserInformation user)
+        private void Login(
+            UserInformation user)
         {
             _loginSteps.SetLogin(user.Login);
             _loginSteps.SetPassword(user.Password);

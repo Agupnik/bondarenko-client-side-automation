@@ -2,9 +2,11 @@
 {
     public interface ILoginFormElement
     {
-        void SetLogin(string login);
+        void SetLogin(
+            string login);
 
-        void SetPassword(string password);
+        void SetPassword(
+            string password);
 
         void Login();
     }

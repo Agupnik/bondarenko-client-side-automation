@@ -2,11 +2,14 @@
 {
     public interface IEmailFormElement
     {
-        void SetReceiver(string receiver);
+        void SetReceiver(
+            string receiver);
 
-        void SetSubject(string subject);
+        void SetSubject(
+            string subject);
 
-        void SetBody(string emailBody);
+        void SetBody(
+            string emailBody);
 
         void SendEmail();
 

@@ -19,13 +19,19 @@ namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
         public string GetErrorMessage()
         {
             var result = _sendEmailSteps.GetErrorMessage();
-            var index = result.LastIndexOf("\r\n");
-            return index >= 0 ? result.Substring(0, index) : _sendEmailSteps.GetErrorMessage();
+            var index = result.LastIndexOf(
+                "\r\n");
+            return index >= 0 ? result.Substring(
+                0, 
+                index) : 
+                _sendEmailSteps.GetErrorMessage();
         }
 
-        public void OpenAndLogin(UserInformation user)
+        public void OpenAndLogin(
+            UserInformation user)
         {
-            _loginContext.OpenAndLogin(user);
+            _loginContext.OpenAndLogin(
+                user);
         }
 
         public void OpenEmailForm()
@@ -33,11 +39,16 @@ namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
             _sendEmailSteps.OpenEmailForm();
         }
 
-        public void SendEmail(string receiver, EmailInformation email)
+        public void SendEmail(
+            string receiver, 
+            EmailInformation email)
         {
-            _sendEmailSteps.SetReceiver(receiver);
-            _sendEmailSteps.SetSubject(email.Subject);
-            _sendEmailSteps.SetBody(email.Body);
+            _sendEmailSteps.SetReceiver(
+                receiver);
+            _sendEmailSteps.SetSubject(
+                email.Subject);
+            _sendEmailSteps.SetBody(
+                email.Body);
             _sendEmailSteps.SendEmail();
         }
 

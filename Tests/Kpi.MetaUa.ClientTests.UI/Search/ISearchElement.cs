@@ -2,10 +2,12 @@
 {
     public interface ISearchElement
     {
-        void SetValue(string value);
+        void SetValue(
+            string value);
 
         void Search();
 
-        void Search(string value);
+        void Search(
+            string value);
     }
 }

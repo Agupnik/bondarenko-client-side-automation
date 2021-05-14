@@ -13,9 +13,11 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
         [FindBy(How.XPath, ".//span[@class='btn2']/input")]
         private HtmlButton SearchButton { get; set; }
 
-        public void SetValue(string value)
+        public void SetValue(
+            string value)
         {
-            SearchHtmlTextBox.SetText(value);
+            SearchHtmlTextBox.SetText(
+                value);
         }
 
         public void Search()
@@ -23,9 +25,11 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
             SearchButton.Click();
         }
 
-        public void Search(string value)
+        public void Search(
+            string value)
         {
-            SetValue(value);
+            SetValue(
+                value);
             Search();
         }
     }

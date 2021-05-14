@@ -22,7 +22,8 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         }
 
         [Given(@"I have (.*) user")]
-        public void GivenIHaveExistingUserUser(string entityName)
+        public void GivenIHaveExistingUserUser(
+            string entityName)
         {
             _userInformation = UsersStorage.Users[entityName];
         }
@@ -30,7 +31,8 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         [When(@"I login to application")]
         public void WhenILoginToApplication()
         {
-            _loginContext.OpenAndLogin(_userInformation);
+            _loginContext.OpenAndLogin(
+                _userInformation);
         }
 
         [Then(@"I see user login in header")]

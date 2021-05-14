@@ -19,14 +19,18 @@ namespace Kpi.MetaUa.ClientTests.UI.Login
 
         private LoginFormElement LoginForm => PageFactory.Get<LoginPage>(_webDriver).LoginForm;
 
-        public void SetLogin(string login)
+        public void SetLogin(
+            string login)
         {
-            LoginForm.SetLogin(login);
+            LoginForm.SetLogin(
+                login);
         }
 
-        public void SetPassword(string password)
+        public void SetPassword(
+            string password)
         {
-            LoginForm.SetPassword(password);
+            LoginForm.SetPassword(
+                password);
         }
 
         public void Login()

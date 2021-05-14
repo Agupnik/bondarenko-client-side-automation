@@ -2,7 +2,8 @@
 {
     public interface ISearchContext
     {
-        void OpenAndSetValue(string value);
+        void OpenAndSetValue(
+            string value);
 
         void Search();
 

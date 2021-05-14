@@ -12,10 +12,12 @@ namespace Kpi.MetaUa.ClientTests.Domain.Search
             _searchSteps = searchSteps;
         }
 
-        public void OpenAndSetValue(string value)
+        public void OpenAndSetValue(
+            string value)
         {
             _searchSteps.OpenMainView();
-            _searchSteps.SetValue(value);
+            _searchSteps.SetValue(
+                value);
         }
 
         public void Search()
@@ -26,7 +28,8 @@ namespace Kpi.MetaUa.ClientTests.Domain.Search
         public string SearchResultStatisticsText()
         {
             return _searchSteps.SearchResultStatisticsText().Substring(
-                0, _searchSteps.SearchResultStatisticsText().LastIndexOf(":"));
+                0, 
+                _searchSteps.SearchResultStatisticsText().LastIndexOf(":"));
         }
     }
 }

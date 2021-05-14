@@ -27,19 +27,25 @@ namespace Kpi.MetaUa.ClientTests.UI.MailBox
             return ErrorMessage.GetText().Trim();
         }
 
-        public void SetReceiver(string receiver)
+        public void SetReceiver(
+            string receiver)
         {
-            SendToTextBox.SetText(receiver);
+            SendToTextBox.SetText(
+                receiver);
         }
 
-        public void SetSubject(string subject)
+        public void SetSubject(
+            string subject)
         {
-            SubjectTextBox.SetText(subject);
+            SubjectTextBox.SetText(
+                subject);
         }
 
-        public void SetBody(string emailBody)
+        public void SetBody(
+            string emailBody)
         {
-            BodyTextBox.SetText(emailBody);
+            BodyTextBox.SetText(
+                emailBody);
         }
 
         public void SendEmail()
