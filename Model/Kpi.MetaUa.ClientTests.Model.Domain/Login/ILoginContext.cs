@@ -4,7 +4,5 @@
     {
         void OpenAndLogin(
             UserInformation user);
-
-        string GetErrorMessage();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Kpi.MetaUa.ClientTests.Model.Domain.Login;
+using Kpi.MetaUa.ClientTests.Model.Domain.Search;
 using Kpi.MetaUa.ClientTests.Model.Domain.SendEmail;
 using Kpi.MetaUa.ClientTests.TestsData.Storage;
 using TechTalk.SpecFlow;
@@ -10,13 +11,19 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
     public class SendEmailDefinition
     {
         private readonly ISendEmailContext _sendEmailContext;
+        private readonly ILoginContext _loginContext;
+        private readonly ISendEmailSteps _sendEmailSteps;
         private UserInformation _userInformation;
         private EmailInformation _emailInformation;
 
         public SendEmailDefinition(
-            ISendEmailContext sendEmailContext)
+            ISendEmailContext sendEmailContext,
+            ILoginContext loginContext,
+            ISendEmailSteps sendEmailSteps)
         {
             _sendEmailContext = sendEmailContext;
+            _loginContext = loginContext;
+            _sendEmailSteps = sendEmailSteps;
         }
 
         [Given(@"I have '(.*)' as a sender")]
@@ -24,7 +31,7 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
             string entityName)
         {
             _userInformation = UsersStorage.Users[entityName];
-            _sendEmailContext.OpenAndLogin(
+            _loginContext.OpenAndLogin(
                 _userInformation);
         }
 
@@ -38,7 +45,7 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         [When(@"I open email form")]
         public void WhenIOpenEmailForm()
         {
-            _sendEmailContext.OpenEmailForm();
+            _sendEmailSteps.OpenEmailForm();
         }
 
         [When(@"I send email to myself")]
@@ -52,7 +59,7 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         [Then(@"I see received email in my inbox")]
         public void ThenISeeReceivedEmailInMyInbox()
         {
-            _sendEmailContext.GetLastEmailTitle().Should().BeEquivalentTo(
+            _sendEmailSteps.GetLastEmailTitle().Should().BeEquivalentTo(
                 _emailInformation.Subject);
         }
 

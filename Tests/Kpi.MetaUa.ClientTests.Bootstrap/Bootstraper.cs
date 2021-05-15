@@ -3,7 +3,6 @@ using Autofac;
 using Kpi.MetaUa.ClientTests.Domain.Login;
 using Kpi.MetaUa.ClientTests.Domain.Search;
 using Kpi.MetaUa.ClientTests.Domain.SendEmail;
-using Kpi.MetaUa.ClientTests.Domain.UserInfo;
 using Kpi.MetaUa.ClientTests.Model.Domain.Login;
 using Kpi.MetaUa.ClientTests.Model.Domain.Search;
 using Kpi.MetaUa.ClientTests.Model.Domain.SendEmail;
@@ -56,7 +55,6 @@ namespace Kpi.MetaUa.ClientTests.Bootstrap
             Builder.RegisterType<LoginSteps>().As<ILoginSteps>().SingleInstance();
             Builder.RegisterType<SearchSteps>().As<ISearchSteps>().SingleInstance();
             Builder.RegisterType<SearchContext>().As<ISearchContext>().SingleInstance();
-            Builder.RegisterType<UserInfoContext>().As<IUserInfoContext>().SingleInstance();
             Builder.RegisterType<UserInfoSteps>().As<IUserInfoSteps>().SingleInstance();
             Builder.RegisterType<SendEmailSteps>().As<ISendEmailSteps>().SingleInstance();
             Builder.RegisterType<SendEmailContext>().As<ISendEmailContext>().SingleInstance();

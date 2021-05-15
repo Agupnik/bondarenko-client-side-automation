@@ -5,32 +5,12 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace Kpi.MetaUa.ClientTests.UI.Search
 {
-    public class SearchElement : HtmlElement, ISearchElement
+    public class SearchElement : HtmlElement
     {
         [FindBy(How.XPath, ".//input[@id='id_search_in_ukraine']")]
-        private HtmlTextBox SearchHtmlTextBox { get; set; }
+        public HtmlTextBox SearchTextBox { get; set; }
 
         [FindBy(How.XPath, ".//span[@class='btn2']/input")]
-        private HtmlButton SearchButton { get; set; }
-
-        public void SetValue(
-            string value)
-        {
-            SearchHtmlTextBox.SetText(
-                value);
-        }
-
-        public void Search()
-        {
-            SearchButton.Click();
-        }
-
-        public void Search(
-            string value)
-        {
-            SetValue(
-                value);
-            Search();
-        }
+        public HtmlButton SearchButton { get; set; }
     }
 }

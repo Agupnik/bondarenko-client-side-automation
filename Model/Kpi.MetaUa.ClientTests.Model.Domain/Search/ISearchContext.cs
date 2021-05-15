@@ -5,8 +5,6 @@
         void OpenAndSetValue(
             string value);
 
-        void Search();
-
-        string SearchResultStatisticsText();
+        string GetSearchResultStatisticsText();
     }
 }

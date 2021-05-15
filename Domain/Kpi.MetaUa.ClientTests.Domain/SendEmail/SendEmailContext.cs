@@ -1,4 +1,5 @@
-﻿using Kpi.MetaUa.ClientTests.Model.Domain.Login;
+﻿using System;
+using Kpi.MetaUa.ClientTests.Model.Domain.Login;
 using Kpi.MetaUa.ClientTests.Model.Domain.SendEmail;
 
 namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
@@ -6,37 +7,17 @@ namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
     public class SendEmailContext : ISendEmailContext
     {
         private readonly ISendEmailSteps _sendEmailSteps;
-        private readonly ILoginContext _loginContext;
 
         public SendEmailContext(
-            ISendEmailSteps sendEmailSteps,
-            ILoginContext loginContext)
+            ISendEmailSteps sendEmailSteps)
         {
             _sendEmailSteps = sendEmailSteps;
-            _loginContext = loginContext;
         }
 
         public string GetErrorMessage()
         {
             var result = _sendEmailSteps.GetErrorMessage();
-            var index = result.LastIndexOf(
-                "\r\n");
-            return index >= 0 ? result.Substring(
-                0, 
-                index) : 
-                _sendEmailSteps.GetErrorMessage();
-        }
-
-        public void OpenAndLogin(
-            UserInformation user)
-        {
-            _loginContext.OpenAndLogin(
-                user);
-        }
-
-        public void OpenEmailForm()
-        {
-            _sendEmailSteps.OpenEmailForm();
+            return result.Split("\r\n")[0];
         }
 
         public void SendEmail(
@@ -50,11 +31,6 @@ namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
             _sendEmailSteps.SetBody(
                 email.Body);
             _sendEmailSteps.SendEmail();
-        }
-
-        public string GetLastEmailTitle()
-        {
-            return _sendEmailSteps.GetLastEmailTitle();
         }
     }
 }

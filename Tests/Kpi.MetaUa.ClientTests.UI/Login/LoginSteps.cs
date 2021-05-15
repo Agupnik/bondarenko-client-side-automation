@@ -22,20 +22,20 @@ namespace Kpi.MetaUa.ClientTests.UI.Login
         public void SetLogin(
             string login)
         {
-            LoginForm.SetLogin(
+            LoginForm.LoginTextBox.SetText(
                 login);
         }
 
         public void SetPassword(
             string password)
         {
-            LoginForm.SetPassword(
+            LoginForm.PasswordTextBox.SetText(
                 password);
         }
 
         public void Login()
         {
-            LoginForm.Login();
+            LoginForm.LoginButton.Click();
         }
 
         public string GetErrorMessage()

@@ -21,43 +21,43 @@ namespace Kpi.MetaUa.ClientTests.UI.MailBox
 
         public void OpenEmailForm()
         {
-            MailBoxPage.Menu.SendEmailButtonClick();
+            MailBoxPage.Menu.WriteEmailButton.Click();
         }
 
         public void SetReceiver(
             string receiver)
         {
-            MailBoxPage.EmailForm.SetReceiver(
+            MailBoxPage.EmailForm.SendToTextBox.SetText(
                 receiver);
         }
 
         public void SetSubject(
             string subject)
         {
-            MailBoxPage.EmailForm.SetSubject(
+            MailBoxPage.EmailForm.SubjectTextBox.SetText(
                 subject);
         }
 
         public void SetBody(
             string body)
         {
-            MailBoxPage.EmailForm.SetBody(
+            MailBoxPage.EmailForm.BodyTextBox.SetText(
                 body);
         }
 
         public string GetLastEmailTitle()
         {
-            return MailBoxPage.Inbox.GetLastMailTitle();
+            return MailBoxPage.Inbox.LastMailTitle.GetText();
         }
 
         public string GetErrorMessage()
         {
-            return MailBoxPage.EmailForm.GetErrorMessage();
+            return MailBoxPage.EmailForm.ErrorMessage.GetText();
         }
 
         public void SendEmail()
         {
-            MailBoxPage.EmailForm.SendEmail();
+            MailBoxPage.EmailForm.SendButton.Click();
         }
     }
 }

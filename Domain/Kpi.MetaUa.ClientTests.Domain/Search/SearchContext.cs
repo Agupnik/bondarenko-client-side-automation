@@ -1,4 +1,5 @@
-﻿using Kpi.MetaUa.ClientTests.Model.Domain.Search;
+﻿using System;
+using Kpi.MetaUa.ClientTests.Model.Domain.Search;
 
 namespace Kpi.MetaUa.ClientTests.Domain.Search
 {
@@ -20,16 +21,13 @@ namespace Kpi.MetaUa.ClientTests.Domain.Search
                 value);
         }
 
-        public void Search()
-        {
-            _searchSteps.Search();
-        }
-
-        public string SearchResultStatisticsText()
+        public string GetSearchResultStatisticsText()
         {
             return _searchSteps.SearchResultStatisticsText().Substring(
                 0, 
-                _searchSteps.SearchResultStatisticsText().LastIndexOf(":"));
+                _searchSteps.SearchResultStatisticsText().LastIndexOf(
+                    ":", 
+                    StringComparison.Ordinal));
         }
     }
 }

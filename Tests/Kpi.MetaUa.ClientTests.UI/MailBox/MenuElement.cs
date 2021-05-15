@@ -5,14 +5,9 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace Kpi.MetaUa.ClientTests.UI.MailBox
 {
-    public class MenuElement : HtmlElement, IMenuElement
+    public class MenuElement : HtmlElement
     {
         [FindBy(How.XPath, ".//a[@id='id_send_email']")]
-        private HtmlButton SearchHtmlTextBox { get; set; }
-
-        public void SendEmailButtonClick()
-        {
-            SearchHtmlTextBox.Click();
-        }
+        public HtmlButton WriteEmailButton { get; set; }
     }
 }

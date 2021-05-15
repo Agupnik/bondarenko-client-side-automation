@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Bogus;
 using Kpi.MetaUa.ClientTests.Model.Domain.Login;
 
@@ -20,7 +21,7 @@ namespace Kpi.MetaUa.ClientTests.TestsData.Storage
 
         private static UserInformation InvalidUser =>
             new Faker<UserInformation>()
-                .RuleFor(u => u.Login, "InvalidLoginInfo")
-                .RuleFor(u => u.Password, "InvalidPassword");
+                .RuleFor(u => u.Login, Guid.NewGuid().ToString)
+                .RuleFor(u => u.Password, Guid.NewGuid().ToString);
     }
 }

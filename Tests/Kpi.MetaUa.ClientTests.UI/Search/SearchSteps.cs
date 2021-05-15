@@ -25,13 +25,13 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
         public void SetValue(
             string value)
         {
-            SearchElement.SetValue(
+            SearchElement.SearchTextBox.SetText(
                 value);
         }
 
         public void Search()
         {
-            SearchElement.Search();
+            SearchElement.SearchButton.Click();
         }
 
         public string SearchResultStatisticsText()

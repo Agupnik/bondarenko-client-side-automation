@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace Kpi.MetaUa.ClientTests.UI.Login
 {
-    public class LoginFormElement : HtmlElement, ILoginFormElement
+    public class LoginFormElement : HtmlElement
     {
         [FindBy(How.XPath, ".//input[@id='login-field']")]
         public HtmlTextBox LoginTextBox { get; set; }
@@ -18,24 +18,5 @@ namespace Kpi.MetaUa.ClientTests.UI.Login
 
         [FindBy(How.XPath, ".//font")] 
         public HtmlLabel ErrorMessage { get; set; }
-
-        public void SetLogin(
-            string login)
-        {
-            LoginTextBox.SetText(
-                login);
-        }
-
-        public void SetPassword(
-            string password)
-        {
-            PasswordTextBox.SetText(
-                password);
-        }
-
-        public void Login()
-        {
-            LoginButton.Click();
-        }
     }
 }

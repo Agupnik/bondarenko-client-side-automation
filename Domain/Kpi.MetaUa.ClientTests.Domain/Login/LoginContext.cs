@@ -12,11 +12,6 @@ namespace Kpi.MetaUa.ClientTests.Domain.Login
             _loginSteps = loginSteps;
         }
 
-        public string GetErrorMessage()
-        {
-            return _loginSteps.GetErrorMessage();
-        }
-
         public void OpenAndLogin(
             UserInformation user)
         {

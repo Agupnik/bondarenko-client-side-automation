@@ -10,15 +10,18 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
     public class LoginDefinition
     {
         private readonly ILoginContext _loginContext;
-        private readonly IUserInfoContext _userInfoContext;
+        private readonly ILoginSteps _loginSteps;
+        private readonly IUserInfoSteps _userInfoSteps;
         private UserInformation _userInformation;
 
         public LoginDefinition(
             ILoginContext loginContext,
-            IUserInfoContext userInfoContext)
+            IUserInfoSteps userInfoSteps,
+            ILoginSteps loginSteps)
         {
             _loginContext = loginContext;
-            _userInfoContext = userInfoContext;
+            _userInfoSteps = userInfoSteps;
+            _loginSteps = loginSteps;
         }
 
         [Given(@"I have (.*) user")]
@@ -38,14 +41,14 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         [Then(@"I see user login in header")]
         public void ThenISeeUserLoginInHeader()
         {
-            _userInfoContext.GetUserLogin().Should().BeEquivalentTo(
+            _userInfoSteps.GetUserLogin().Should().BeEquivalentTo(
                 _userInformation.Login);
         }
 
         [Then(@"I see '(.*)' message")]
         public void ThenISeeMessageInForm(string message)
         {
-            _loginContext.GetErrorMessage().Should().BeEquivalentTo(
+            _loginSteps.GetErrorMessage().Should().BeEquivalentTo(
                 message);
         }
     }

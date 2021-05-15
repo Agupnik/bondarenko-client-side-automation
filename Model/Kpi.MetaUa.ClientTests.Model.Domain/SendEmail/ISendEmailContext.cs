@@ -6,15 +6,8 @@ namespace Kpi.MetaUa.ClientTests.Model.Domain.SendEmail
     {
         string GetErrorMessage();
 
-        void OpenAndLogin(
-            UserInformation user);
-
-        void OpenEmailForm();
-
         void SendEmail(
             string receiver, 
             EmailInformation email);
-
-        string GetLastEmailTitle();
     }
 }
