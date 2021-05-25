@@ -18,9 +18,7 @@ Scenario Outline: 2. Validate the ability to send emails with invalid email
 	Then I see <ErrorMessage> response
 
 	Examples: 
-		| TestId   | InvalidAddress     | ErrorMessage                                            |
-		| string   | InvalidUserAddress | Помилка: поштова скринька отримувача не існує           |
-		| specChar | @#%^wewe!""&*()№\/ | Синтаксична помилка в параметрах або аргументах адреси. |
-		| maxValue | 99999999999999999  | Помилка: поштова скринька отримувача не існує           |
-		| minValue | -999999            | Помилка: поштова скринька отримувача не існує           |
-		| zero     | 0                  | Помилка в параметрах або аргументах листа. (100503)     |
+		| TestId   | InvalidAddress       | ErrorMessage                                            |
+		| string   | invalid_user_address | Помилка: поштова скринька отримувача не існує           |
+		| specChar | @#%^wewe!""&*()№\/   | Синтаксична помилка в параметрах або аргументах адреси. |
+		| zero     | 0                    | Помилка в параметрах або аргументах листа. (100503)     |
