@@ -19,11 +19,9 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         }
 
         [Given(@"I have (.*) as search query text")]
-        public void GivenIHaveAsSearchQueryText(
-            string text)
+        public void GivenIHaveAsSearchQueryText(string text)
         {
-            _searchContext.OpenAndSetValue(
-                text);
+            _searchContext.OpenAndSetValue(text);
         }
 
         [When(@"I searching")]
@@ -33,11 +31,10 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         }
 
         [Then(@"I see '(.*)' search results")]
-        public void ThenISeeSearchResults(
-            string text)
+        public void ThenISeeSearchResults(string text)
         {
-            _searchContext.GetSearchResultStatisticsText().Should().BeEquivalentTo(
-                text);
+            _searchSteps.SearchResultStatisticsText().Should()
+                .BeEquivalentTo(text);
         }
     }
 }

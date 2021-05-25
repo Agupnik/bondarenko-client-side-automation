@@ -1,6 +1,4 @@
-﻿using System;
-using Kpi.MetaUa.ClientTests.Model.Domain.Login;
-using Kpi.MetaUa.ClientTests.Model.Domain.SendEmail;
+﻿using Kpi.MetaUa.ClientTests.Model.Domain.SendEmail;
 
 namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
 {
@@ -20,16 +18,11 @@ namespace Kpi.MetaUa.ClientTests.Domain.SendEmail
             return result.Split("\r\n")[0];
         }
 
-        public void SendEmail(
-            string receiver, 
-            EmailInformation email)
+        public void SendEmail(string receiver, EmailInformation email)
         {
-            _sendEmailSteps.SetReceiver(
-                receiver);
-            _sendEmailSteps.SetSubject(
-                email.Subject);
-            _sendEmailSteps.SetBody(
-                email.Body);
+            _sendEmailSteps.SetReceiver(receiver);
+            _sendEmailSteps.SetSubject(email.Subject);
+            _sendEmailSteps.SetBody(email.Body);
             _sendEmailSteps.SendEmail();
         }
     }

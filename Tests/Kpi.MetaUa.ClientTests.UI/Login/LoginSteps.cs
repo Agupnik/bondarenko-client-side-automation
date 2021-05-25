@@ -7,30 +7,24 @@ namespace Kpi.MetaUa.ClientTests.UI.Login
 {
     public class LoginSteps : StepsBase, ILoginSteps
     {
-        private readonly IWebDriver _webDriver;
-
         public LoginSteps(
             IWebDriver webDriver,
             IEnvironmentConfiguration environmentConfiguration)
             : base(webDriver, environmentConfiguration)
         {
-            _webDriver = webDriver;
         }
 
-        private LoginFormElement LoginForm => PageFactory.Get<LoginPage>(_webDriver).LoginForm;
+        private LoginFormElement LoginForm => 
+            PageFactory.Get<LoginPage>(WebDriver).LoginForm;
 
-        public void SetLogin(
-            string login)
+        public void SetLogin(string login)
         {
-            LoginForm.LoginTextBox.SetText(
-                login);
+            LoginForm.LoginTextBox.SetText(login);
         }
 
-        public void SetPassword(
-            string password)
+        public void SetPassword(string password)
         {
-            LoginForm.PasswordTextBox.SetText(
-                password);
+            LoginForm.PasswordTextBox.SetText(password);
         }
 
         public void Login()

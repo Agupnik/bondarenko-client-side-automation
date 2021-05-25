@@ -2,11 +2,9 @@
 {
     public interface ILoginSteps
     {
-        void SetLogin(
-            string login);
+        void SetLogin(string login);
 
-        void SetPassword(
-            string password);
+        void SetPassword(string password);
 
         void Login();
 

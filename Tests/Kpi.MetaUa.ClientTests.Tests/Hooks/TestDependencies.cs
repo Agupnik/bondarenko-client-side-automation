@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 
 namespace Kpi.MetaUa.ClientTests.Tests.Hooks
 {
-    public class TestDependencies
+    public static class TestDependencies
     {
         [ScenarioDependencies]
         public static ContainerBuilder CreateContainerBuilder()

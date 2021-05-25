@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Kpi.MetaUa.ClientTests.Model.Domain.Login;
-using Kpi.MetaUa.ClientTests.Model.Domain.Search;
 using Kpi.MetaUa.ClientTests.Model.Domain.SendEmail;
 using Kpi.MetaUa.ClientTests.TestsData.Storage;
 using TechTalk.SpecFlow;
@@ -27,17 +26,14 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         }
 
         [Given(@"I have '(.*)' as a sender")]
-        public void GivenIHaveAsASender(
-            string entityName)
+        public void GivenIHaveAsASender(string entityName)
         {
             _userInformation = UsersStorage.Users[entityName];
-            _loginContext.OpenAndLogin(
-                _userInformation);
+            _loginContext.OpenAndLogin(_userInformation);
         }
 
         [Given(@"I have '(.*)' email that will be sent")]
-        public void GivenIHaveEmailThatWillBeSent(
-            string entityName)
+        public void GivenIHaveEmailThatWillBeSent(string entityName)
         {
             _emailInformation = EmailStorage.Emails[entityName];
         }
@@ -52,7 +48,7 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         public void WhenISendEmailToMyself()
         {
             _sendEmailContext.SendEmail(
-                _userInformation.Login, 
+                _userInformation.Login,
                 _emailInformation);
         }
 
@@ -67,17 +63,14 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         public void WhenISendMailWithInvalidUserAddressInvalidEmailAddress(
             string invalidAddress)
         {
-            _sendEmailContext.SendEmail(
-                invalidAddress, 
-                _emailInformation);
+            _sendEmailContext.SendEmail(invalidAddress, _emailInformation);
         }
 
         [Then(@"I see (.*) response")]
-        public void ThenISeeResponse(
-            string response)
+        public void ThenISeeResponse(string response)
         {
-            _sendEmailContext.GetErrorMessage().Should().BeEquivalentTo(
-                response);
+            _sendEmailContext.GetErrorMessage().Should()
+                .BeEquivalentTo(response);
         }
     }
 }

@@ -2,7 +2,6 @@
 {
     public interface ILoginContext
     {
-        void OpenAndLogin(
-            UserInformation user);
+        void OpenAndLogin(UserInformation user);
     }
 }

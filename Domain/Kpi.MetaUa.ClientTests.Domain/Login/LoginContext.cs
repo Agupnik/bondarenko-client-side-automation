@@ -6,21 +6,18 @@ namespace Kpi.MetaUa.ClientTests.Domain.Login
     {
         private readonly ILoginSteps _loginSteps;
 
-        public LoginContext(
-            ILoginSteps loginSteps)
+        public LoginContext(ILoginSteps loginSteps)
         {
             _loginSteps = loginSteps;
         }
 
-        public void OpenAndLogin(
-            UserInformation user)
+        public void OpenAndLogin(UserInformation user)
         {
             _loginSteps.OpenMainView();
             Login(user);
         }
 
-        private void Login(
-            UserInformation user)
+        private void Login(UserInformation user)
         {
             _loginSteps.SetLogin(user.Login);
             _loginSteps.SetPassword(user.Password);

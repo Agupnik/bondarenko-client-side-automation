@@ -2,9 +2,6 @@
 {
     public interface ISearchContext
     {
-        void OpenAndSetValue(
-            string value);
-
-        string GetSearchResultStatisticsText();
+        void OpenAndSetValue(string value);
     }
 }

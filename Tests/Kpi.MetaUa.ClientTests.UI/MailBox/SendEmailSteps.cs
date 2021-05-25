@@ -7,42 +7,34 @@ namespace Kpi.MetaUa.ClientTests.UI.MailBox
 {
     public class SendEmailSteps : StepsBase, ISendEmailSteps
     {
-        private readonly IWebDriver _webDriver;
-
         public SendEmailSteps(
             IWebDriver webDriver,
             IEnvironmentConfiguration environmentConfiguration)
             : base(webDriver, environmentConfiguration)
         {
-            _webDriver = webDriver;
         }
 
-        private MailBoxPage MailBoxPage => PageFactory.Get<MailBoxPage>(_webDriver);
+        private MailBoxPage MailBoxPage => 
+            PageFactory.Get<MailBoxPage>(WebDriver);
 
         public void OpenEmailForm()
         {
             MailBoxPage.Menu.WriteEmailButton.Click();
         }
 
-        public void SetReceiver(
-            string receiver)
+        public void SetReceiver(string receiver)
         {
-            MailBoxPage.EmailForm.SendToTextBox.SetText(
-                receiver);
+            MailBoxPage.EmailForm.SendToTextBox.SetText(receiver);
         }
 
-        public void SetSubject(
-            string subject)
+        public void SetSubject(string subject)
         {
-            MailBoxPage.EmailForm.SubjectTextBox.SetText(
-                subject);
+            MailBoxPage.EmailForm.SubjectTextBox.SetText(subject);
         }
 
-        public void SetBody(
-            string body)
+        public void SetBody(string body)
         {
-            MailBoxPage.EmailForm.BodyTextBox.SetText(
-                body);
+            MailBoxPage.EmailForm.BodyTextBox.SetText(body);
         }
 
         public string GetLastEmailTitle()

@@ -1,21 +1,22 @@
 ﻿using Kpi.MetaUa.ClientTests.Model.Domain.UserInfo;
 using Kpi.MetaUa.ClientTests.Model.Platform.Drivers;
+using Kpi.MetaUa.ClientTests.Platform.Configuration.Environment;
 using Kpi.MetaUa.ClientTests.Platform.Factory;
 using Kpi.MetaUa.ClientTests.UI.MailBox;
 
 namespace Kpi.MetaUa.ClientTests.UI.UserInfo
 {
-    public class UserInfoSteps : IUserInfoSteps
+    public class UserInfoSteps : StepsBase, IUserInfoSteps
     {
-        private readonly IWebDriver _webDriver;
-
         public UserInfoSteps(
-            IWebDriver webDriver)
+            IWebDriver webDriver,
+            IEnvironmentConfiguration environmentConfiguration)
+            : base(webDriver, environmentConfiguration)
         {
-            _webDriver = webDriver;
         }
 
-        private MailBoxPage MailBoxPage => PageFactory.Get<MailBoxPage>(_webDriver);
+        private MailBoxPage MailBoxPage => 
+            PageFactory.Get<MailBoxPage>(WebDriver);
 
         public string GetUserLogin()
         {

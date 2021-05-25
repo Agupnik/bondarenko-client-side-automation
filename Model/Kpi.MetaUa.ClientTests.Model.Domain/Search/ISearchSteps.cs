@@ -2,8 +2,7 @@
 {
     public interface ISearchSteps
     {
-        void SetValue(
-            string value);
+        void SetValue(string value);
 
         void Search();
 

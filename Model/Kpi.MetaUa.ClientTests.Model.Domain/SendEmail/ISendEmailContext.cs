@@ -1,13 +1,9 @@
-﻿using Kpi.MetaUa.ClientTests.Model.Domain.Login;
-
-namespace Kpi.MetaUa.ClientTests.Model.Domain.SendEmail
+﻿namespace Kpi.MetaUa.ClientTests.Model.Domain.SendEmail
 {
     public interface ISendEmailContext
     {
         string GetErrorMessage();
 
-        void SendEmail(
-            string receiver, 
-            EmailInformation email);
+        void SendEmail(string receiver, EmailInformation email);
     }
 }

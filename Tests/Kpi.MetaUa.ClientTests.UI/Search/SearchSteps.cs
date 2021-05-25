@@ -1,4 +1,5 @@
-﻿using Kpi.MetaUa.ClientTests.Model.Domain.Search;
+﻿using System;
+using Kpi.MetaUa.ClientTests.Model.Domain.Search;
 using Kpi.MetaUa.ClientTests.Platform.Configuration.Environment;
 using Kpi.MetaUa.ClientTests.Platform.Factory;
 using Kpi.MetaUa.ClientTests.UI.Login;
@@ -8,25 +9,22 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
 {
     public class SearchSteps : StepsBase, ISearchSteps
     {
-        private readonly IWebDriver _webDriver;
-
         public SearchSteps(
             IWebDriver webDriver,
             IEnvironmentConfiguration environmentConfiguration)
             : base(webDriver, environmentConfiguration)
         {
-            _webDriver = webDriver;
         }
 
-        private SearchElement SearchElement => PageFactory.Get<LoginPage>(_webDriver).SearchElement;
+        private SearchElement SearchElement => 
+            PageFactory.Get<LoginPage>(WebDriver).SearchElement;
 
-        private SearchPage SearchPage => PageFactory.Get<SearchPage>(_webDriver);
+        private SearchPage SearchPage => 
+            PageFactory.Get<SearchPage>(WebDriver);
 
-        public void SetValue(
-            string value)
+        public void SetValue(string value)
         {
-            SearchElement.SearchTextBox.SetText(
-                value);
+            SearchElement.SearchTextBox.SetText(value);
         }
 
         public void Search()
@@ -37,7 +35,12 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
         public string SearchResultStatisticsText()
         {
             SwitchToNewTab();
-            return SearchPage.SearchResultStatisticsText.GetText().Trim();
+            var searchStatistic = SearchPage.SearchResultStatisticsText.GetText().Trim();
+            return searchStatistic.Substring(
+                0,
+                searchStatistic.LastIndexOf(
+                    ":",
+                    StringComparison.Ordinal));
         }
     }
 }

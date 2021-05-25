@@ -15,8 +15,8 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         private UserInformation _userInformation;
 
         public LoginDefinition(
-            ILoginContext loginContext,
-            IUserInfoSteps userInfoSteps,
+            ILoginContext loginContext, 
+            IUserInfoSteps userInfoSteps, 
             ILoginSteps loginSteps)
         {
             _loginContext = loginContext;
@@ -25,8 +25,7 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         }
 
         [Given(@"I have (.*) user")]
-        public void GivenIHaveExistingUserUser(
-            string entityName)
+        public void GivenIHaveExistingUserUser(string entityName)
         {
             _userInformation = UsersStorage.Users[entityName];
         }
@@ -34,22 +33,20 @@ namespace Kpi.MetaUa.ClientTests.Tests.Features
         [When(@"I login to application")]
         public void WhenILoginToApplication()
         {
-            _loginContext.OpenAndLogin(
-                _userInformation);
+            _loginContext.OpenAndLogin(_userInformation);
         }
 
         [Then(@"I see user login in header")]
         public void ThenISeeUserLoginInHeader()
         {
-            _userInfoSteps.GetUserLogin().Should().BeEquivalentTo(
-                _userInformation.Login);
+            _userInfoSteps.GetUserLogin().Should()
+                .BeEquivalentTo(_userInformation.Login);
         }
 
         [Then(@"I see '(.*)' message")]
         public void ThenISeeMessageInForm(string message)
         {
-            _loginSteps.GetErrorMessage().Should().BeEquivalentTo(
-                message);
+            _loginSteps.GetErrorMessage().Should().BeEquivalentTo(message);
         }
     }
 }
