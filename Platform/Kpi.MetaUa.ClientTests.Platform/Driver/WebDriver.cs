@@ -162,7 +162,7 @@ namespace Kpi.MetaUa.ClientTests.Platform.Driver
             var driver = new ChromeDriver(
                 chromeService,
                 chromeOptions,
-                TimeSpan.FromMinutes(5));
+                TimeSpan.FromMinutes(7));
             driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromMinutes(6);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromMinutes(6);
             _logger.Information("Finished Init Local Run.");

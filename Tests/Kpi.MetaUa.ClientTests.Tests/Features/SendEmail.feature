@@ -3,6 +3,7 @@
 Feature: Send Email
 	The ability to send emails
 
+@Smoke
 Scenario: 1. Validate the ability to send emails
 	Given I have 'ExistingUser' as a sender
 	And I have 'ValidMail' email that will be sent

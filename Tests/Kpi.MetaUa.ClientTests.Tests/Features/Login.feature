@@ -3,6 +3,7 @@
 Feature: Login
 	Verify the posibility to login
 
+@Smoke
 Scenario: 1. Verify Login as registered user field by field
 	Given I have ExistingUser user
 	When I login to application
