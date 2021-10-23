@@ -20,6 +20,5 @@ Scenario Outline: 2. Validate the ability to send emails with invalid email
 
 	Examples: 
 		| TestId   | InvalidAddress       | ErrorMessage                                            |
-		| string   | invalid_user_address | Помилка: поштова скринька отримувача не існує           |
 		| specChar | @#%^wewe!""&*()№\/   | Синтаксична помилка в параметрах або аргументах адреси. |
 		| zero     | 0                    | Помилка в параметрах або аргументах листа. (100503)     |
