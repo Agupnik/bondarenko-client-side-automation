@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Kpi.MetaUa.ClientTests.Model.Domain.Run;
 using Kpi.MetaUa.ClientTests.Model.Platform.Element;
@@ -156,7 +155,7 @@ namespace Kpi.MetaUa.ClientTests.Platform.Driver
         {
             _logger.Information("Starting Init Local Run.");
             var chromeOptions = GetChromeOptions();
-            var chromeService = ChromeDriverService.CreateDefaultService(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName);
+            var chromeService = ChromeDriverService.CreateDefaultService(AppDomain.CurrentDomain.BaseDirectory);
             chromeService.EnableVerboseLogging = true;
             chromeService.LogPath =
                 $"{AppDomain.CurrentDomain.BaseDirectory}/Logs/chrome_client_logs_{DateTime.UtcNow:yyyy_MM_dd_hh_mm_ss}.txt";
