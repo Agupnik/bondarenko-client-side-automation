@@ -12,13 +12,13 @@ namespace Kpi.MetaUa.ClientTests.UI.MailBox
         {
         }
 
-        [FindBy(How.XPath, ".//div[@class='topMN']")]
+        [FindBy(How.XPath, ".//div[contains(@class, 'topMN')]")]
         public MailBoxHeader Header { get; set; }
 
-        [FindBy(How.XPath, "//div[@class='b_c']")]
+        [FindBy(How.XPath, ".//div[contains(@class, 'b_c')]")]
         public InboxElement Inbox { get; set; }
 
-        [FindBy(How.XPath, "//div[@class='left_panel_block']")]
+        [FindBy(How.XPath, ".//div[contains(@class, 'left_panel_block')]")]
         public MenuElement Menu { get; set; }
 
         [FindBy(How.XPath, "//div[@id='b3_cnt']")]

@@ -10,7 +10,7 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
         [FindBy(How.XPath, ".//input[@id='id_search_in_ukraine']")]
         public HtmlTextBox SearchTextBox { get; set; }
 
-        [FindBy(How.XPath, ".//span[@class='btn2']/input")]
+        [FindBy(How.XPath, ".//span[contains(@class, 'btn2')]/input")]
         public HtmlButton SearchButton { get; set; }
     }
 }

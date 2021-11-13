@@ -20,5 +20,6 @@ Scenario Outline: 2. Validate the ability to send emails with invalid email
 
 	Examples: 
 		| TestId   | InvalidAddress       | ErrorMessage                                            |
+		| spacebar | invalid user address | Синтаксична помилка в параметрах або аргументах адреси. |
 		| specChar | @#%^wewe!""&*()№\/   | Синтаксична помилка в параметрах або аргументах адреси. |
 		| zero     | 0                    | Помилка в параметрах або аргументах листа. (100503)     |

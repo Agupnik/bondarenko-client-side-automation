@@ -19,7 +19,7 @@ namespace Kpi.MetaUa.ClientTests.UI.MailBox
         [FindBy(How.XPath, "//*[@id='body']")] 
         public HtmlTextBox BodyTextBox { get; set; }
 
-        [FindBy(How.XPath, "*//input[@class='panel_submit'][@name='send']")]
+        [FindBy(How.XPath, "*//input[contains(@name, 'send') and contains(@class, 'panel_submit')]")]
         public HtmlButton SendButton { get; set; }
     }
 }
