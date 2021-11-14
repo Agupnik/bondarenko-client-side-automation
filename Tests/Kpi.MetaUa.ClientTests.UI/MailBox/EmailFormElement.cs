@@ -7,19 +7,19 @@ namespace Kpi.MetaUa.ClientTests.UI.MailBox
 {
     public class EmailFormElement : HtmlElement
     {
-        [FindBy(How.XPath, "//*[@id='b3_cnt']//center//div")]
+        [FindBy(How.XPath, "//div[@id='b3_cnt']//center//div")]
         public HtmlLabel ErrorMessage { get; set; }
 
-        [FindBy(How.XPath, "//*[@id='send_to']")]
+        [FindBy(How.XPath, "//textarea[@id='send_to']")]
         public HtmlTextBox SendToTextBox { get; set; }
 
-        [FindBy(How.XPath, "//*[@id='subject']")]
+        [FindBy(How.XPath, "//input[@id='subject']")]
         public HtmlTextBox SubjectTextBox { get; set; }
 
-        [FindBy(How.XPath, "//*[@id='body']")] 
+        [FindBy(How.XPath, "//textarea[@id='body']")] 
         public HtmlTextBox BodyTextBox { get; set; }
 
-        [FindBy(How.XPath, "*//input[contains(@name, 'send') and contains(@class, 'panel_submit')]")]
+        [FindBy(How.XPath, "//input[contains(@class, 'panel_submit')][@name='send']")]
         public HtmlButton SendButton { get; set; }
     }
 }

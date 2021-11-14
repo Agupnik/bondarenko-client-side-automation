@@ -13,7 +13,7 @@ namespace Kpi.MetaUa.ClientTests.UI.Search
         {
         }
 
-        [FindBy(How.XPath, "//*[@id='resInfo-0']")]
+        [FindBy(How.XPath, "//div[@id='resInfo-0']")]
         public HtmlLabel SearchResultStatisticsText { get; set; }
     }
 }
